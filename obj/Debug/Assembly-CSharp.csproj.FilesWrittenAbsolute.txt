@@ -1,0 +1,17 @@
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/UnityEngine.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/UnityEditor.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Mono.Cecil.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Unity.DataContract.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/lindseypoad/code/2D Top Down/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/lindseypoad/code/2D Top Down/obj/Debug/Assembly-CSharp.dll
+/Users/lindseypoad/code/2D Top Down/obj/Debug/Assembly-CSharp.dll.mdb
