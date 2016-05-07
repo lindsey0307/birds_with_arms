@@ -15,3 +15,5 @@ Roadmap
 * Randomize bird assets
 
 * (F) Improve ai/player spawning location at start of game
+
+* (iii) peck -> increase asset scale
