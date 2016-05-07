@@ -3,8 +3,10 @@ using System.Collections;
 using System;
 
 public class PlayerMobility : MonoBehaviour {
-  [SerializeField] private float speed;
+  private const double ProbabilityBirdStandsIdle = 0.4;
 
+  [SerializeField] private float speed;
+         
 	private string horizontalCtrl;
 	private string verticalCtrl;
   private Rect levelBounds;
@@ -78,6 +80,11 @@ public class PlayerMobility : MonoBehaviour {
 
       if (random.NextDouble() < Math.Abs(eWeight)) {
         xMove = eWeight > 0 ? -1 : 1;
+      }
+
+      if (random.NextDouble() < ProbabilityBirdStandsIdle) {
+        xMove = 0;
+        yMove = 0;
       }
 
       nextDirectionSwtichTime = DateTime.Now.AddSeconds(random.Next(800)/100f);
