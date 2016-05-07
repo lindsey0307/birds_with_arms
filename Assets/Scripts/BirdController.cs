@@ -22,10 +22,13 @@ public class BirdController : MonoBehaviour {
   private int yMove = 0;
   private DateTime nextDirectionSwtichTime;
   private System.Random random;
+	private Animator animator;
+	private bool animate;
 
   public void Init(int playerId, System.Random random, Rect levelBounds, GameController controller) {
     this.Id = playerId;
     this.gameController = controller;
+		animator = GetComponent<Animator>();
     this.levelBounds = levelBounds;
     this.random = random;
     isAi = playerId == 0;
@@ -85,6 +88,7 @@ public class BirdController : MonoBehaviour {
       xMove = random.Next(-1, 2);
       yMove = random.Next(-1, 2);
 
+
       if (random.NextDouble() < Math.Abs(nWeight)) {
         yMove = nWeight > 0 ? -1 : 1;
       }
@@ -97,6 +101,12 @@ public class BirdController : MonoBehaviour {
         xMove = 0;
         yMove = 0;
       }
+
+			if (xMove != 0 || yMove != 0) {
+				animator.SetBool("linguiniWalk", true);
+			} else {
+				animator.SetBool("linguiniWalk", false);
+			}
 
       nextDirectionSwtichTime = DateTime.Now.AddSeconds(random.Next(800)/100f);
     }
