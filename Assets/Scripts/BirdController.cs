@@ -8,7 +8,7 @@ public class BirdController : MonoBehaviour {
 
   [SerializeField] private float speed;
   [SerializeField] private BoxCollider2D colliderBox;
-         
+	       
   public int Id { get; private set; }
 
 	private string horizontalCtrl;
@@ -28,10 +28,20 @@ public class BirdController : MonoBehaviour {
   public void Init(int playerId, System.Random random, Rect levelBounds, GameController controller, bool ai) {
     this.Id = playerId;
     this.gameController = controller;
-		this.animator = GetComponent<Animator>();
     this.levelBounds = levelBounds;
     this.random = random;
     this.isAi = ai;
+		this.animator = this.GetComponent<Animator>();
+		if (random.NextDouble() < 0.3) {
+			animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("LINGUINI_sprites-3_0", 
+		typeof(RuntimeAnimatorController));
+		} else if (random.NextDouble() < 0.5) {
+			animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("BAF_sprites_0", 
+			typeof(RuntimeAnimatorController));
+		} else {
+			animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("danksey_sprite-1_0",
+			typeof(RuntimeAnimatorController));
+		}
     if (isAi) {
       nextDirectionSwtichTime = DateTime.Now;
     } else {
@@ -106,9 +116,9 @@ public class BirdController : MonoBehaviour {
       }
 
 			if (xMove != 0 || yMove != 0) {
-				animator.SetBool("linguiniWalk", true);
+				animator.SetBool("birdWalk", true);
 			} else {
-				animator.SetBool("linguiniWalk", false);
+				animator.SetBool("birdWalk", false);
 			}
 
 			if (xMove < 0) {
@@ -158,9 +168,9 @@ public class BirdController : MonoBehaviour {
     }
 
 		if (h != 0 || v != 0) {
-			animator.SetBool("linguiniWalk", true);
+			animator.SetBool("birdWalk", true);
 		} else {
-			animator.SetBool("linguiniWalk", false);
+			animator.SetBool("birdWalk", false);
 		}
 
 		if (facingLeft) {
