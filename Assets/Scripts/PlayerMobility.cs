@@ -67,8 +67,19 @@ public class PlayerMobility : MonoBehaviour {
 
   private void DoAiMovement() {
     if (DateTime.Now >= nextDirectionSwtichTime) {
+      double nWeight = 2.0 * this.transform.position.y / this.levelBounds.height;
+      double eWeight = 2.0 * this.transform.position.x / this.levelBounds.width;
       xMove = random.Next(-1, 2);
       yMove = random.Next(-1, 2);
+
+      if (random.NextDouble() < Math.Abs(nWeight)) {
+        yMove = nWeight > 0 ? -1 : 1;
+      }
+
+      if (random.NextDouble() < Math.Abs(eWeight)) {
+        xMove = eWeight > 0 ? -1 : 1;
+      }
+
       nextDirectionSwtichTime = DateTime.Now.AddSeconds(random.Next(800)/100f);
     }
 
