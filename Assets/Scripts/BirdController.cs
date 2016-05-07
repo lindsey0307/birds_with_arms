@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
-public class PlayerMobility : MonoBehaviour {
+public class BirdController : MonoBehaviour {
   private const double ProbabilityBirdStandsIdle = 0.4;
 
   [SerializeField] private float speed;
+  [SerializeField] private BoxCollider2D colliderBox;
          
+  public int Id { get; private set; }
+
 	private string horizontalCtrl;
 	private string verticalCtrl;
   private Rect levelBounds;
   private bool isAi;
+  private GameController gameController;
 
   // stoopid ai birb movement tingz
   private int xMove = 0;
@@ -18,7 +23,9 @@ public class PlayerMobility : MonoBehaviour {
   private DateTime nextDirectionSwtichTime;
   private System.Random random;
 
-  public void Init(int playerId, System.Random random, Rect levelBounds) {
+  public void Init(int playerId, System.Random random, Rect levelBounds, GameController controller) {
+    this.Id = playerId;
+    this.gameController = controller;
     this.levelBounds = levelBounds;
     this.random = random;
     isAi = playerId == 0;
@@ -30,6 +37,10 @@ public class PlayerMobility : MonoBehaviour {
     }
 
     RandomizeStartPosition();
+  }
+
+  public void KillWithFlex() {
+    this.gameObject.SetActive(false);
   }
 
 	protected void FixedUpdate() {
@@ -90,7 +101,7 @@ public class PlayerMobility : MonoBehaviour {
       nextDirectionSwtichTime = DateTime.Now.AddSeconds(random.Next(800)/100f);
     }
 
-    transform.position += (Vector3.right * xMove + Vector3.up * yMove) * speed * Time.deltaTime;
+    transform.position += (Vector3.right * xMove + (Vector3.up + Vector3.forward) * yMove) * speed * Time.deltaTime;
   }
 
   private void DoPlayerMovement() {
@@ -98,8 +109,11 @@ public class PlayerMobility : MonoBehaviour {
     float v = Input.GetAxis(verticalCtrl);
     float t = 0.01f;
 
+    if (Input.GetKeyDown(KeyCode.Space)) {
+      HandleDeathFlex();
+    }
+
     if (h < -t) {
-      Debug.Log(levelBounds + " - " + this.transform.position);
       transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
@@ -108,11 +122,34 @@ public class PlayerMobility : MonoBehaviour {
     }
 
     if (v > t) {
-      transform.position += Vector3.up * speed * Time.deltaTime;
+      transform.position += (Vector3.up + Vector3.forward) * speed * Time.deltaTime;
     }
 
     if (v < -t) {
-      transform.position += Vector3.down * speed * Time.deltaTime;
+      transform.position += (Vector3.down + Vector3.back) * speed * Time.deltaTime;
     }
+  }
+
+  void OnCollisionEnter(Collision collision) {
+    Debug.Log("TEST");
+    foreach (ContactPoint contact in collision.contacts) {
+      Debug.DrawRay(contact.point, contact.normal, Color.white);
+    }
+  }
+
+  private void HandleDeathFlex() {
+    Debug.Log("FLEX!");
+    List<BirdController> birds = gameController.Birds;
+    foreach (var bird in birds) {
+      if (bird.Id != this.Id && InRange(bird.transform)) {
+//        Debug.Log("BIRD HIT!");
+        bird.KillWithFlex();
+      }
+    }
+  }
+
+  private bool InRange(Transform birdTransform) {
+    return Math.Abs(this.transform.position.x - birdTransform.position.x) < 1.0 &&
+      Math.Abs(this.transform.position.y - birdTransform.position.y) < 1.0;
   }
 }
