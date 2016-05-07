@@ -25,13 +25,13 @@ public class BirdController : MonoBehaviour {
 	private Animator animator;
 	private bool animate;
 
-  public void Init(int playerId, System.Random random, Rect levelBounds, GameController controller) {
+  public void Init(int playerId, System.Random random, Rect levelBounds, GameController controller, bool ai) {
     this.Id = playerId;
     this.gameController = controller;
-		animator = GetComponent<Animator>();
+		this.animator = GetComponent<Animator>();
     this.levelBounds = levelBounds;
     this.random = random;
-    isAi = playerId == 0;
+    this.isAi = ai;
     if (isAi) {
       nextDirectionSwtichTime = DateTime.Now;
     } else {

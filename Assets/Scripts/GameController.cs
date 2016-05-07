@@ -23,11 +23,11 @@ public class GameController : MonoBehaviour {
 
     Birds = new List<BirdController>();
 
-    for (int i = 0; i < 60; i++) {
+    for (int i = 1; i < 2; i++) {
       var bird = GameObject.Instantiate(birdPrefab);
       bird.transform.SetParent(this.transform);
       BirdController birdController = bird.GetComponent<BirdController>();
-      birdController.Init(i < 2 ? i : 0, random, bounds, this);
+      birdController.Init(i, random, bounds, this, i > 1);
       Birds.Add(birdController);
     }
   }
