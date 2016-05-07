@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class GameSetup : MonoBehaviour {
+public class GameController : MonoBehaviour {
   [SerializeField] private GameObject birdPrefab;
   [SerializeField] private Camera camera;
+
+  public List<BirdController> Birds { get; private set; }
 
   private System.Random random = new System.Random();
 
@@ -18,11 +21,14 @@ public class GameSetup : MonoBehaviour {
 
     var bounds = new Rect(minX, minY, maxX - minX, maxY - minY);
 
+    Birds = new List<BirdController>();
+
     for (int i = 0; i < 60; i++) {
       var bird = GameObject.Instantiate(birdPrefab);
       bird.transform.SetParent(this.transform);
-      PlayerMobility birdController = bird.GetComponent<PlayerMobility>();
-      birdController.Init(i < 0 ? i : 0, random, bounds);
+      BirdController birdController = bird.GetComponent<BirdController>();
+      birdController.Init(i < 2 ? i : 0, random, bounds, this);
+      Birds.Add(birdController);
     }
   }
 }
