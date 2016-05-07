@@ -5,14 +5,11 @@ public class GameSetup : MonoBehaviour {
   [SerializeField] private GameObject birdPrefab;
   [SerializeField] private Camera camera;
 
-//  private float mapX = 100.0f;
-//  private float mapY = 100.0f;
   private System.Random random = new System.Random();
 
   void Start() {
     float vertExtent = camera.orthographicSize;
     float horzExtent = camera.orthographicSize * Screen.width / Screen.height;
-    Debug.Log(vertExtent + ", " + horzExtent);
 
     float minX = -horzExtent;
     float maxX = horzExtent;

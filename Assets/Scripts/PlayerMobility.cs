@@ -26,6 +26,8 @@ public class PlayerMobility : MonoBehaviour {
       horizontalCtrl = "Horizontal_P" + playerId;
       verticalCtrl = "Vertical_P" + playerId;
     }
+
+    RandomizeStartPosition();
   }
 
 	protected void FixedUpdate() {
@@ -37,6 +39,14 @@ public class PlayerMobility : MonoBehaviour {
 
     RestrictMovementToLevelBounds();
 	}
+
+  private void RandomizeStartPosition() {
+    Vector3 randomPosition = new Vector3(
+      (float)(random.NextDouble() - .5) * levelBounds.width,
+      (float)(random.NextDouble() - .5) * levelBounds.height,
+      0);
+    this.transform.position = randomPosition;
+  }
 
   private void RestrictMovementToLevelBounds() {
     Vector3 boundedPosition = this.transform.position;
