@@ -61,6 +61,7 @@ public class BirdController : MonoBehaviour {
       (float)(random.NextDouble() - .5) * levelBounds.width,
       (float)(random.NextDouble() - .5) * levelBounds.height,
       0);
+    randomPosition.z = randomPosition.y;
     this.transform.position = randomPosition;
   }
 
@@ -78,6 +79,7 @@ public class BirdController : MonoBehaviour {
       boundedPosition.y = levelBounds.yMax;
     }
 
+    boundedPosition.z = boundedPosition.y;
     this.transform.position = boundedPosition;
   }
 
