@@ -7,6 +7,7 @@ public class PlayerMobility : MonoBehaviour {
 
 	private string horizontalCtrl;
 	private string verticalCtrl;
+  private Rect levelBounds;
   private bool isAi;
 
   // stoopid ai birb movement tingz
@@ -15,7 +16,8 @@ public class PlayerMobility : MonoBehaviour {
   private DateTime nextDirectionSwtichTime;
   private System.Random random;
 
-  public void Init(int playerId, System.Random random) {
+  public void Init(int playerId, System.Random random, Rect levelBounds) {
+    this.levelBounds = levelBounds;
     this.random = random;
     isAi = playerId == 0;
     if (isAi) {
@@ -32,16 +34,35 @@ public class PlayerMobility : MonoBehaviour {
     } else {
       DoPlayerMovement();
     }
+
+    RestrictMovementToLevelBounds();
 	}
+
+  private void RestrictMovementToLevelBounds() {
+    Vector3 boundedPosition = this.transform.position;
+    if (boundedPosition.x < levelBounds.xMin) {
+      boundedPosition.x = levelBounds.xMin;
+    } else if (boundedPosition.x > levelBounds.xMax) {
+      boundedPosition.x = levelBounds.xMax;
+    }
+
+    if (boundedPosition.y < levelBounds.yMin) {
+      boundedPosition.y = levelBounds.yMin;
+    } else if (boundedPosition.y > levelBounds.yMax) {
+      boundedPosition.y = levelBounds.yMax;
+    }
+
+    this.transform.position = boundedPosition;
+  }
 
   private void DoAiMovement() {
     if (DateTime.Now >= nextDirectionSwtichTime) {
       xMove = random.Next(-1, 2);
       yMove = random.Next(-1, 2);
-      nextDirectionSwtichTime = DateTime.Now.AddSeconds(5);
+      nextDirectionSwtichTime = DateTime.Now.AddSeconds(random.Next(800)/100f);
     }
 
-    transform.position += Vector3.right * xMove + Vector3.up * yMove;
+    transform.position += (Vector3.right * xMove + Vector3.up * yMove) * speed * Time.deltaTime;
   }
 
   private void DoPlayerMovement() {
@@ -50,6 +71,7 @@ public class PlayerMobility : MonoBehaviour {
     float t = 0.01f;
 
     if (h < -t) {
+      Debug.Log(levelBounds + " - " + this.transform.position);
       transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
