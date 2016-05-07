@@ -23,7 +23,7 @@ public class BirdController : MonoBehaviour {
   private DateTime nextDirectionSwtichTime;
   private System.Random random;
 	private Animator animator;
-	private bool animate;
+	private bool facingLeft;
 
   public void Init(int playerId, System.Random random, Rect levelBounds, GameController controller, bool ai) {
     this.Id = playerId;
@@ -97,6 +97,7 @@ public class BirdController : MonoBehaviour {
 
       if (random.NextDouble() < Math.Abs(eWeight)) {
         xMove = eWeight > 0 ? -1 : 1;
+
       }
 
       if (random.NextDouble() < ProbabilityBirdStandsIdle) {
@@ -108,6 +109,19 @@ public class BirdController : MonoBehaviour {
 				animator.SetBool("linguiniWalk", true);
 			} else {
 				animator.SetBool("linguiniWalk", false);
+			}
+
+			if (xMove < 0) {
+				facingLeft = true;
+			} else {
+				facingLeft = false;
+			}
+
+
+			if (facingLeft) {
+				transform.localRotation = Quaternion.Euler(0, 0, 0);
+			} else {
+				transform.localRotation = Quaternion.Euler(0, 180, 0);
 			}
 
       nextDirectionSwtichTime = DateTime.Now.AddSeconds(random.Next(800)/100f);
@@ -126,10 +140,12 @@ public class BirdController : MonoBehaviour {
     }
 
     if (h < -t) {
+			facingLeft = true;
       transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
     if (h > t) {
+			facingLeft = false;
       transform.position += Vector3.right * speed * Time.deltaTime;
     }
 
@@ -140,6 +156,18 @@ public class BirdController : MonoBehaviour {
     if (v < -t) {
       transform.position += (Vector3.down + Vector3.back) * speed * Time.deltaTime;
     }
+
+		if (h != 0 || v != 0) {
+			animator.SetBool("linguiniWalk", true);
+		} else {
+			animator.SetBool("linguiniWalk", false);
+		}
+
+		if (facingLeft) {
+			transform.localRotation = Quaternion.Euler(0, 0, 0);
+		} else {
+			transform.localRotation = Quaternion.Euler(0, 180, 0);
+		}
   }
 
   void OnCollisionEnter(Collision collision) {
