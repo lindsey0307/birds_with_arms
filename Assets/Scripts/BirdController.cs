@@ -11,6 +11,7 @@ public class BirdController : MonoBehaviour {
 
   private const float FlexLockTimerSeconds = 3.0f;
   private const float PeckLockTimerSeconds = 3.0f;
+  private const float DeathTimerSeconds = 3.0f;
 
   [SerializeField] private float speed;
   [SerializeField] private Animator animator;
@@ -24,9 +25,10 @@ public class BirdController : MonoBehaviour {
   private bool isAi;
   private GameController gameController;
 
-  private enum State { NORMAL, FLEXING, DEATH_FLEXING, PECKING }
+  private enum State { NORMAL, FLEXING, DEATH_FLEXING, PECKING, DEAD }
   private State birdState;
   private DateTime movemetLockTimer;
+  private DateTime impendingDeathTimer;
 
   // stoopid ai birb movement tingz
   private int xMove = 0;
@@ -43,6 +45,7 @@ public class BirdController : MonoBehaviour {
     this.isAi = ai;
     this.birdState = State.NORMAL;
     this.movemetLockTimer = DateTime.Now;
+    this.impendingDeathTimer = DateTime.Now.AddSeconds(120.0f + (float)random.NextDouble() * 5f);
 
     InitBirdAnim();
 
@@ -57,11 +60,27 @@ public class BirdController : MonoBehaviour {
   }
 
   public void KillWithFlex() {
-		animator.SetBool("birdDeath", true);
-//    this.gameObject.SetActive(false);
+    if (this.birdState != State.DEAD) {
+      this.impendingDeathTimer = DateTime.Now.AddSeconds(DeathTimerSeconds);
+    }
+  }
+
+  private void HandleDeath() {
+    this.birdState = State.DEAD;
+    animator.SetBool("birdDeath", true);
+    xMove = 0;
+    yMove = 0;
   }
 
 	protected void FixedUpdate() {
+    if (this.birdState == State.DEAD) {
+      return;
+    }
+
+    if (this.impendingDeathTimer < DateTime.Now) {
+      HandleDeath();
+    }
+
     if (movemetLockTimer < DateTime.Now) {
 			animator.SetBool("birdFlex", false);
       this.birdState = State.NORMAL;
