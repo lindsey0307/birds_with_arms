@@ -10,7 +10,7 @@ public class BirdController : MonoBehaviour {
   private const float InputThreshold = 0.01f;
 
   private const float FlexLockTimerSeconds = 3.0f;
-  private const float PeckLockTimerSeconds = 3.0f;
+  private const float PeckLockTimerSeconds = 0.1f;
   private const float DeathTimerSeconds = 3.0f;
 
   [SerializeField] private float speed;
@@ -21,6 +21,10 @@ public class BirdController : MonoBehaviour {
 
 	private string horizontalCtrl;
 	private string verticalCtrl;
+  private string flexInput;
+  private string killInput;
+  private string peckInput;
+
   private Rect levelBounds;
   private bool isAi;
   private GameController gameController;
@@ -54,6 +58,9 @@ public class BirdController : MonoBehaviour {
     } else {
       horizontalCtrl = "Horizontal_P" + playerId;
       verticalCtrl = "Vertical_P" + playerId;
+      flexInput = "Flex_P" + playerId;
+      killInput = "Kill_P" + playerId;
+      peckInput = "Peck_P" + playerId;
     }
 
     RandomizeStartPosition();
@@ -90,6 +97,10 @@ public class BirdController : MonoBehaviour {
     UpdatePositionAndState();
 
     RestrictMovementToLevelBounds();
+
+    Vector3 adjustedZPos = this.transform.position;
+    adjustedZPos.z = this.transform.position.y - this.transform.localScale.z*0.4f;
+    this.transform.position = adjustedZPos;
 	}
 
   private void UpdatePositionAndState() {
@@ -207,8 +218,12 @@ public class BirdController : MonoBehaviour {
     transform.position += h * Vector3.right * speed * Time.deltaTime;
     transform.position += v * (Vector3.up + Vector3.forward) * speed * Time.deltaTime;
 
-    if (Input.GetKeyDown(KeyCode.Space)) {
+    if (Input.GetButton(peckInput)) {
+      HandlePeck();
+    } else if (Input.GetButton(killInput)) {
       HandleDeathFlex();
+    } else if (Input.GetButton(flexInput)) {
+      HandleNormalFlex();
     }
 
 		if (h == 0 && v == 0) {
@@ -222,6 +237,19 @@ public class BirdController : MonoBehaviour {
     this.movemetLockTimer = DateTime.Now.AddSeconds(PeckLockTimerSeconds);
     this.birdState = State.PECKING;
 		animator.SetBool("birdPeck", true);
+    List<GameObject> seedsInRange = new List<GameObject>();
+
+    foreach (var seed in this.gameController.Seeds) {
+      if (InRange(seed.transform.position + new Vector3(0, -1f*this.transform.localScale.y, 0), 0.3f)) {
+        seedsInRange.Add(seed);
+      }
+    }
+
+    foreach (var seed in seedsInRange) {
+      this.transform.localScale *= 1.1f;
+      gameController.Seeds.Remove(seed);
+      GameObject.Destroy(seed);
+    }
   }
 
   private void HandleNormalFlex() {
@@ -237,14 +265,14 @@ public class BirdController : MonoBehaviour {
 
     List<BirdController> birds = gameController.Birds;
     foreach (var bird in birds) {
-      if (bird.Id != this.Id && InRange(bird.transform)) {
+      if (bird.Id != this.Id && InRange(bird.transform.position)) {
         bird.KillWithFlex();
       }
     }
   }
 
-  private bool InRange(Transform birdTransform) {
-    return Math.Abs(this.transform.position.x - birdTransform.position.x) < 1.0 &&
-      Math.Abs(this.transform.position.y - birdTransform.position.y) < 1.0;
+  private bool InRange(Vector3 position, float rangeFactor = 1) {
+    return Math.Abs(this.transform.position.x - position.x) < this.transform.localScale.z*rangeFactor &&
+      Math.Abs(this.transform.position.y - position.y) < this.transform.localScale.z*rangeFactor;
   }
 }
