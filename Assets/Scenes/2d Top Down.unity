@@ -181,7 +181,7 @@ GameObject:
   - 4: {fileID: 1164940604}
   - 114: {fileID: 1164940603}
   m_Layer: 0
-  m_Name: GameScene
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722bba960c3624fe7b083c519e368b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seedController: {fileID: 1365254858}
   birdPrefab: {fileID: 186936, guid: a4552620620cd4865a5a616acab8701c, type: 2}
   blueLightPrefab: {fileID: 153032, guid: 70276df8db21d43d8b2f0d8c8b54727a, type: 2}
   pinkLightPrefab: {fileID: 179710, guid: 9dce880705e8e4595acd6cd4ed35285d, type: 2}
@@ -211,6 +212,47 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1164940602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.165, y: 0.753, z: 0}
+  m_LocalScale: {x: 1, y: -1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+--- !u!1 &1365254857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1365254859}
+  - 114: {fileID: 1365254858}
+  m_Layer: 0
+  m_Name: SeedController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1365254858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365254857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641bec49b2abb43ac83cb456c40a7d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpawnDelaySeconds: 10
+  seedPrefab: {fileID: 165374, guid: fe08ae4898cec40c8805b0b24112b331, type: 2}
+--- !u!4 &1365254859
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365254857}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.165, y: 0.753, z: 0}
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_Children: []
@@ -276,7 +318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1909958308
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +379,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1961405777
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +390,7 @@ GameObject:
   - 4: {fileID: 1961405779}
   - 212: {fileID: 1961405778}
   m_Layer: 0
-  m_Name: DanceFloor_0006_bg.png
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +437,7 @@ Transform:
   m_LocalScale: {x: 1.4088665, y: 0.7929601, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1964417014
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +448,7 @@ GameObject:
   - 4: {fileID: 1964417016}
   - 108: {fileID: 1964417015}
   m_Layer: 0
-  m_Name: fill light
+  m_Name: Fill Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -456,4 +498,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
