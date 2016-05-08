@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 4040b8d9f1c1c436db8028ba7a133549
+timeCreated: 1462733522
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: puffframe_0
+    21300002: puffframe_1
+    21300004: puffframe_2
+    21300006: puffframe_3
+    21300008: puffframe_4
+    21300010: puffframe_5
+    21300012: puffframe_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: puffframe_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 686
+        width: 435
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 111.5, y: -51}
+        - {x: 119.5, y: -16}
+        - {x: 119.5, y: 20}
+        - {x: 116.5, y: 27}
+        - {x: 79.5, y: 77}
+        - {x: 84.5, y: 108}
+        - {x: 37.5, y: 151}
+        - {x: -9.5, y: 151}
+        - {x: -13.5, y: 150}
+        - {x: -33.5, y: 140}
+        - {x: -85.5, y: 53}
+        - {x: -80.5, y: 1}
+        - {x: -77.5, y: -22}
+        - {x: -113.5, y: -7}
+        - {x: -126.5, y: -4}
+        - {x: -141.5, y: -21}
+        - {x: -141.5, y: -53}
+        - {x: -95.5, y: -151}
+        - {x: -85.5, y: -153}
+        - {x: 98.5, y: -153}
+        - {x: 117.5, y: -128}
+        - {x: 118.5, y: -98}
+        - {x: 86.5, y: -91}
+    - name: puffframe_1
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 686
+        width: 435
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 148.5, y: -81}
+        - {x: 149.5, y: -79}
+        - {x: 149.5, y: -40}
+        - {x: 144.5, y: -19}
+        - {x: 104.5, y: 27}
+        - {x: 108.5, y: 48}
+        - {x: 100.5, y: 96}
+        - {x: 102.5, y: 117}
+        - {x: 53.5, y: 149}
+        - {x: 22.5, y: 156}
+        - {x: -17.5, y: 156}
+        - {x: -26.5, y: 149}
+        - {x: -52.5, y: 128}
+        - {x: -80.5, y: 95}
+        - {x: -97.5, y: 51}
+        - {x: -94.5, y: 6}
+        - {x: -129.5, y: 6}
+        - {x: -153.5, y: -13}
+        - {x: -155.5, y: -28}
+        - {x: -155.5, y: -109}
+        - {x: -139.5, y: -134}
+        - {x: -98.5, y: -151}
+        - {x: -74.5, y: -154}
+        - {x: -22.5, y: -154}
+        - {x: 8.5, y: -152}
+        - {x: 99.5, y: -154}
+        - {x: 117.5, y: -132}
+        - {x: 116.5, y: -114}
+    - name: puffframe_2
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 686
+        width: 435
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 169.5, y: -89}
+        - {x: 172.5, y: -81}
+        - {x: 172.5, y: -46}
+        - {x: 169.5, y: -29}
+        - {x: 123.5, y: 29}
+        - {x: 115.5, y: 49}
+        - {x: 121.5, y: 78}
+        - {x: 117.5, y: 111}
+        - {x: 84.5, y: 137}
+        - {x: 40.5, y: 155}
+        - {x: 1.5, y: 155}
+        - {x: -35.5, y: 147}
+        - {x: -62.5, y: 124}
+        - {x: -94.5, y: 88}
+        - {x: -102.5, y: 68}
+        - {x: -107.5, y: 50}
+        - {x: -103.5, y: 13}
+        - {x: -132.5, y: 8}
+        - {x: -158.5, y: -12}
+        - {x: -164.5, y: -23}
+        - {x: -170.5, y: -45}
+        - {x: -170.5, y: -93}
+        - {x: -166.5, y: -118}
+        - {x: -149.5, y: -136}
+        - {x: -135.5, y: -142}
+        - {x: -119.5, y: -153}
+        - {x: -104.5, y: -156}
+        - {x: 99.5, y: -156}
+        - {x: 115.5, y: -146}
+        - {x: 123.5, y: -116}
+        - {x: 135.5, y: -113}
+    - name: puffframe_3
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 686
+        width: 435
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 180.5, y: -91}
+        - {x: 180.5, y: 7}
+        - {x: 113.5, y: 154}
+        - {x: -7.5, y: 154}
+        - {x: -67.5, y: 115}
+        - {x: -56.5, y: 21}
+        - {x: 9.5, y: -54}
+        - {x: 8.5, y: -60}
+        - {x: 8.5, y: -56}
+        - {x: 6.5, y: -51}
+        - {x: -9.5, y: -53}
+        - {x: -24.5, y: -68}
+        - {x: -10.5, y: -95}
+        - {x: 7.5, y: -88}
+        - {x: 9.5, y: -84}
+        - {x: 9.5, y: -80}
+        - {x: 9.5, y: -96}
+        - {x: -32.5, y: -112}
+        - {x: -68.5, y: -134}
+        - {x: -68.5, y: -157}
+        - {x: -37.5, y: -163}
+        - {x: 121.5, y: -163}
+        - {x: 160.5, y: -154}
+        - {x: 142.5, y: -126}
+        - {x: 128.5, y: -117}
+        - {x: 137.5, y: -116}
+      - - {x: -150.5, y: 21}
+        - {x: -181.5, y: -12}
+        - {x: -181.5, y: -108}
+        - {x: -165.5, y: -148}
+        - {x: -82.5, y: -148}
+        - {x: -39.5, y: -140}
+        - {x: -21.5, y: -97}
+        - {x: -21.5, y: -31}
+        - {x: -68.5, y: 21}
+    - name: puffframe_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 435
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 209.5, y: -80}
+        - {x: 209.5, y: -9}
+        - {x: 158.5, y: 33}
+        - {x: 132.5, y: 142}
+        - {x: 93.5, y: 158}
+        - {x: -16.5, y: 158}
+        - {x: -36.5, y: 131}
+        - {x: -36.5, y: 43}
+        - {x: 26.5, y: 4}
+        - {x: 2.5, y: -49}
+        - {x: 11.5, y: -142}
+        - {x: 23.5, y: -147}
+        - {x: 128.5, y: -147}
+        - {x: 143.5, y: -146}
+        - {x: 152.5, y: -138}
+        - {x: 148.5, y: -130}
+        - {x: 170.5, y: -130}
+      - - {x: -110.5, y: 7}
+        - {x: -177.5, y: 7}
+        - {x: -209.5, y: -31}
+        - {x: -209.5, y: -142}
+        - {x: -71.5, y: -142}
+        - {x: -50.5, y: -100}
+        - {x: -50.5, y: -37}
+        - {x: -73.5, y: -11}
+      - - {x: 29.5, y: -60}
+        - {x: 19.5, y: -60}
+        - {x: 16.5, y: -61}
+        - {x: 16.5, y: -76}
+        - {x: 17.5, y: -78}
+        - {x: 30.5, y: -78}
+        - {x: 34.5, y: -75}
+        - {x: 34.5, y: -65}
+    - name: puffframe_5
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 348
+        width: 435
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 117.5, y: -121}
+        - {x: 95.5, y: -121}
+        - {x: 87.5, y: -131}
+        - {x: 87.5, y: -140}
+        - {x: 92.5, y: -143}
+        - {x: 126.5, y: -143}
+        - {x: 131.5, y: -136}
+        - {x: 131.5, y: -126}
+        - {x: 125.5, y: -122}
+      - - {x: -194.5, y: -17}
+        - {x: -196.5, y: -21}
+        - {x: -199.5, y: -47}
+        - {x: -199.5, y: -93}
+        - {x: -197.5, y: -99}
+        - {x: -184.5, y: -117}
+        - {x: -175.5, y: -120}
+        - {x: -138.5, y: -120}
+        - {x: -124.5, y: -109}
+        - {x: -124.5, y: -33}
+        - {x: -147.5, y: -17}
+      - - {x: 111.5, y: 5}
+        - {x: 90.5, y: -8}
+        - {x: 90.5, y: -75}
+        - {x: 96.5, y: -107}
+        - {x: 173.5, y: -107}
+        - {x: 182.5, y: -104}
+        - {x: 182.5, y: -23}
+        - {x: 159.5, y: 5}
+      - - {x: -114.5, y: -76}
+        - {x: -112.5, y: -80}
+        - {x: -101.5, y: -80}
+        - {x: -99.5, y: -79}
+        - {x: -99.5, y: -73}
+        - {x: -100.5, y: -66}
+        - {x: -104.5, y: -64}
+        - {x: -110.5, y: -64}
+        - {x: -114.5, y: -68}
+      - - {x: 71.5, y: -34}
+        - {x: 69.5, y: -37}
+        - {x: 69.5, y: -55}
+        - {x: 73.5, y: -67}
+        - {x: 93.5, y: -67}
+        - {x: 94.5, y: -66}
+        - {x: 94.5, y: -38}
+        - {x: 83.5, y: -34}
+      - - {x: -0.5, y: 157}
+        - {x: -8.5, y: 143}
+        - {x: -8.5, y: 78}
+        - {x: 35.5, y: 50}
+        - {x: 93.5, y: 50}
+        - {x: 127.5, y: 67}
+        - {x: 127.5, y: 136}
+        - {x: 82.5, y: 157}
+    - name: puffframe_6
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 348
+        width: 435
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -190.5, y: -42}
+        - {x: -204.5, y: -62}
+        - {x: -204.5, y: -98}
+        - {x: -192.5, y: -116}
+        - {x: -190.5, y: -117}
+        - {x: -166.5, y: -117}
+        - {x: -155.5, y: -105}
+        - {x: -155.5, y: -81}
+        - {x: -165.5, y: -42}
+      - - {x: -156.5, y: -92}
+        - {x: -152.5, y: -98}
+        - {x: -147.5, y: -98}
+        - {x: -144.5, y: -97}
+        - {x: -144.5, y: -78}
+        - {x: -151.5, y: -75}
+        - {x: -155.5, y: -75}
+        - {x: -156.5, y: -76}
+      - - {x: 143.5, y: -24}
+        - {x: 125.5, y: -29}
+        - {x: 119.5, y: -40}
+        - {x: 119.5, y: -59}
+        - {x: 142.5, y: -89}
+        - {x: 189.5, y: -89}
+        - {x: 189.5, y: -25}
+        - {x: 186.5, y: -24}
+      - - {x: 28.5, y: 152}
+        - {x: 13.5, y: 131}
+        - {x: 13.5, y: 108}
+        - {x: 54.5, y: 88}
+        - {x: 85.5, y: 88}
+        - {x: 93.5, y: 96}
+        - {x: 93.5, y: 134}
+        - {x: 75.5, y: 152}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
