@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
+  [SerializeField] private SeedController seedController;
   [SerializeField] private GameObject birdPrefab;
 	[SerializeField] private GameObject blueLightPrefab;
 	[SerializeField] private GameObject pinkLightPrefab;
@@ -11,8 +12,13 @@ public class GameController : MonoBehaviour {
   [SerializeField] private int totalBirdCount;
 
   public List<BirdController> Birds { get; private set; }
+  public List<GameObject> Seeds { get; private set; }
 
   private System.Random random = new System.Random();
+
+  public void AddSeed(GameObject seed) {
+    this.Seeds.Add(seed);
+  }
 
   void Start() {
     GameObject.Instantiate(blueLightPrefab);
@@ -27,6 +33,9 @@ public class GameController : MonoBehaviour {
     var bounds = new Rect(-horzExtent, -vertExtent - vertShift, 2*horzExtent, 2*vertExtent);
 
     Birds = new List<BirdController>();
+    Seeds = new List<GameObject>();
+
+    this.seedController.Init(random, this, bounds);
 
     for (int i = 1; i <= totalBirdCount; i++) {
       var bird = GameObject.Instantiate(birdPrefab);
