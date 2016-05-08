@@ -9,6 +9,9 @@ public class BirdController : MonoBehaviour {
   private const double ProbabilityBirdPecks = 0.4;
   private const float InputThreshold = 0.01f;
 
+  private const float FlexLockTimerSeconds = 3.0f;
+  private const float PeckLockTimerSeconds = 3.0f;
+
   [SerializeField] private float speed;
   [SerializeField] private Animator animator;
   [SerializeField] private string[] birdAnimationResources;
@@ -23,6 +26,7 @@ public class BirdController : MonoBehaviour {
 
   private enum State { NORMAL, FLEXING, DEATH_FLEXING, PECKING }
   private State birdState;
+  private DateTime movemetLockTimer;
 
   // stoopid ai birb movement tingz
   private int xMove = 0;
@@ -38,6 +42,7 @@ public class BirdController : MonoBehaviour {
     this.random = random;
     this.isAi = ai;
     this.birdState = State.NORMAL;
+    this.movemetLockTimer = DateTime.Now;
 
     InitBirdAnim();
 
@@ -56,15 +61,22 @@ public class BirdController : MonoBehaviour {
   }
 
 	protected void FixedUpdate() {
-    UpdatePosition();
+    if (movemetLockTimer < DateTime.Now) {
+      this.birdState = State.NORMAL;
+    }
+
+    UpdatePositionAndState();
+
     RestrictMovementToLevelBounds();
 	}
 
-  private void UpdatePosition() {
+  private void UpdatePositionAndState() {
     if (isAi) {
-      DoAiMovement();
+      DoAiUpdate();
     } else {
-      DoPlayerMovement();
+      if (this.birdState == State.NORMAL) {
+        DoPlayerMovement();
+      }
     }
   }
 
@@ -103,24 +115,33 @@ public class BirdController : MonoBehaviour {
     this.transform.position = boundedPosition;
   }
 
-  private void DoAiMovement() {
+  private void DoAiUpdate() {
     if (DateTime.Now >= nextDirectionSwtichTime) {
-      double nWeight = 2.0 * this.transform.position.y / this.levelBounds.height;
-      double eWeight = 2.0 * this.transform.position.x / this.levelBounds.width;
-      xMove = random.Next(-1, 2);
-      yMove = random.Next(-1, 2);
+      xMove = 0;
+      yMove = 0;
 
-      if (random.NextDouble() < Math.Abs(nWeight)) {
-        yMove = nWeight > 0 ? -1 : 1;
-      }
+      if (random.NextDouble() < ProbabilityBirdFlexes) {
+        HandleNormalFlex();
+      } else if (random.NextDouble() < ProbabilityBirdPecks) {
+        HandlePeck();
+      } else {
+        double nWeight = 2.0 * this.transform.position.y / this.levelBounds.height;
+        double eWeight = 2.0 * this.transform.position.x / this.levelBounds.width;
+        xMove = random.Next(-1, 2);
+        yMove = random.Next(-1, 2);
 
-      if (random.NextDouble() < Math.Abs(eWeight)) {
-        xMove = eWeight > 0 ? -1 : 1;
-      }
+        if (random.NextDouble() < Math.Abs(nWeight)) {
+          yMove = nWeight > 0 ? -1 : 1;
+        }
 
-      if (random.NextDouble() < ProbabilityBirdStandsIdle) {
-        xMove = 0;
-        yMove = 0;
+        if (random.NextDouble() < Math.Abs(eWeight)) {
+          xMove = eWeight > 0 ? -1 : 1;
+        }
+
+        if (random.NextDouble() < ProbabilityBirdStandsIdle) {
+          xMove = 0;
+          yMove = 0;
+        }
       }
 
 			if (xMove != 0 || yMove != 0) {
@@ -175,7 +196,20 @@ public class BirdController : MonoBehaviour {
 		}
   }
 
+  private void HandlePeck() {
+    this.movemetLockTimer = DateTime.Now.AddSeconds(PeckLockTimerSeconds);
+    this.birdState = State.PECKING;
+  }
+
+  private void HandleNormalFlex() {
+    this.movemetLockTimer = DateTime.Now.AddSeconds(FlexLockTimerSeconds);
+    this.birdState = State.FLEXING;
+  }
+
   private void HandleDeathFlex() {
+    this.movemetLockTimer = DateTime.Now.AddSeconds(FlexLockTimerSeconds);
+    this.birdState = State.DEATH_FLEXING;
+
     List<BirdController> birds = gameController.Birds;
     foreach (var bird in birds) {
       if (bird.Id != this.Id && InRange(bird.transform)) {
