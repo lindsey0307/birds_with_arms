@@ -69,9 +69,12 @@ public class BirdController : MonoBehaviour {
     }
 
     if (facingLeft) {
-      transform.localRotation = Quaternion.Euler(0, 0, 0);
+			transform.localScale = new Vector3(1, transform.localScale.y, 1);
+//      transform.localRotation = Quaternion.Euler(0, 0, 0);
     } else {
-      transform.localRotation = Quaternion.Euler(0, 180, 0);
+			transform.localScale = new Vector3(-1, transform.localScale.y, 1);
+
+//      transform.localRotation = Quaternion.Euler(0, 180, 0);
     }
   }
 
