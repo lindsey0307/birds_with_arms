@@ -203,7 +203,7 @@ MonoBehaviour:
   pinkLightPrefab: {fileID: 179710, guid: 9dce880705e8e4595acd6cd4ed35285d, type: 2}
   camera: {fileID: 1131800513}
   playerCount: 2
-  totalBirdCount: 50
+  totalBirdCount: 20
 --- !u!4 &1164940604
 Transform:
   m_ObjectHideFlags: 0
