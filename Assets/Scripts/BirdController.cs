@@ -10,7 +10,7 @@ public class BirdController : MonoBehaviour {
   private const float InputThreshold = 0.01f;
 
   private const float FlexLockTimerSeconds = 3.0f;
-  private const float PeckLockTimerSeconds = 0.1f;
+  private const float PeckLockTimerSeconds = 3.0f;
   private const float DeathTimerSeconds = 3.0f;
 
   [SerializeField] private float speed;
