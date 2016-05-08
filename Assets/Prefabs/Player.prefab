@@ -64,6 +64,7 @@ MonoBehaviour:
   - BAF_sprites_0
   - danksey_sprite-1_0
   - LINGUINI_sprites-3_0
+  - GULL-sprites_0
 --- !u!212 &21202476
 SpriteRenderer:
   m_ObjectHideFlags: 1
