@@ -26,11 +26,11 @@ public class BirdController : MonoBehaviour {
   private string peckInput;
 
   private Rect levelBounds;
-  private bool isAi;
+  public bool isAi;
   private GameController gameController;
 
-  private enum State { NORMAL, FLEXING, DEATH_FLEXING, PECKING, DEAD }
-  private State birdState;
+  public enum State { NORMAL, FLEXING, DEATH_FLEXING, PECKING, DEAD }
+  public State birdState;
   private DateTime movemetLockTimer;
   private DateTime impendingDeathTimer;
 
@@ -77,6 +77,9 @@ public class BirdController : MonoBehaviour {
     animator.SetBool("birdDeath", true);
     xMove = 0;
     yMove = 0;
+    if (!this.isAi) {
+      this.gameController.ReportPlayerDeath();
+    }
   }
 
 	protected void FixedUpdate() {
