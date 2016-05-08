@@ -63,6 +63,7 @@ public class BirdController : MonoBehaviour {
 
 	protected void FixedUpdate() {
     if (movemetLockTimer < DateTime.Now) {
+			animator.SetBool("birdFlex", false);
       this.birdState = State.NORMAL;
     }
 
@@ -210,6 +211,7 @@ public class BirdController : MonoBehaviour {
   private void HandleDeathFlex() {
     this.movemetLockTimer = DateTime.Now.AddSeconds(FlexLockTimerSeconds);
     this.birdState = State.DEATH_FLEXING;
+		animator.SetBool("birdFlex", true);
 
     List<BirdController> birds = gameController.Birds;
     foreach (var bird in birds) {
