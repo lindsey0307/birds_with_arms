@@ -9,6 +9,7 @@ public class BirdController : MonoBehaviour {
 
   [SerializeField] private float speed;
   [SerializeField] private Animator animator;
+  [SerializeField] private string[] birdAnimationResources;
 	       
   public int Id { get; private set; }
 
@@ -23,7 +24,7 @@ public class BirdController : MonoBehaviour {
   private int yMove = 0;
   private DateTime nextDirectionSwtichTime;
   private System.Random random;
-	private bool facingLeft;
+  private bool wasPreviouslyFacingLeft;
 
   public void Init(int playerId, System.Random random, Rect levelBounds, GameController controller, bool ai) {
     this.Id = playerId;
@@ -32,16 +33,8 @@ public class BirdController : MonoBehaviour {
     this.random = random;
     this.isAi = ai;
 
-		if (random.NextDouble() < 0.3) {
-			animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("LINGUINI_sprites-3_0", 
-		typeof(RuntimeAnimatorController));
-		} else if (random.NextDouble() < 0.5) {
-			animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("BAF_sprites_0", 
-			typeof(RuntimeAnimatorController));
-		} else {
-			animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("danksey_sprite-1_0",
-			typeof(RuntimeAnimatorController));
-		}
+    InitBirdAnim();
+
     if (isAi) {
       nextDirectionSwtichTime = DateTime.Now;
     } else {
@@ -67,15 +60,14 @@ public class BirdController : MonoBehaviour {
     } else {
       DoPlayerMovement();
     }
+  }
 
-    if (facingLeft) {
-			transform.localScale = new Vector3(1, transform.localScale.y, 1);
-//      transform.localRotation = Quaternion.Euler(0, 0, 0);
-    } else {
-			transform.localScale = new Vector3(-1, transform.localScale.y, 1);
-
-//      transform.localRotation = Quaternion.Euler(0, 180, 0);
-    }
+  private void InitBirdAnim() {
+    int birdAnimResId = random.Next(this.birdAnimationResources.Length);
+    string birdAnimRes = birdAnimationResources[birdAnimResId];
+    animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load(
+      birdAnimRes, 
+      typeof(RuntimeAnimatorController));
   }
 
   private void RandomizeStartPosition() {
@@ -131,11 +123,8 @@ public class BirdController : MonoBehaviour {
 				animator.SetBool("birdWalk", false);
 			}
 
-			if (xMove < 0) {
-				facingLeft = true;
-			} else {
-				facingLeft = false;
-			}
+      bool birdFacingLeft = xMove < 0;
+      UpdateBirdSpriteDirection(birdFacingLeft);
 
       nextDirectionSwtichTime = DateTime.Now.AddSeconds(random.Next(800)/100f);
     }
@@ -143,36 +132,40 @@ public class BirdController : MonoBehaviour {
     transform.position += (Vector3.right * xMove + (Vector3.up + Vector3.forward) * yMove) * speed * Time.deltaTime;
   }
 
+  private void UpdateBirdSpriteDirection(bool facingLeft) {
+    if (facingLeft && !wasPreviouslyFacingLeft) {
+			transform.localScale = new Vector3(1, transform.localScale.y, 1);
+      wasPreviouslyFacingLeft = true;
+    } else if (!facingLeft && wasPreviouslyFacingLeft) {
+			transform.localScale = new Vector3(-1, transform.localScale.y, 1);
+      wasPreviouslyFacingLeft = false;
+    }
+  }
+
   private void DoPlayerMovement() {
     float h = Input.GetAxis(horizontalCtrl);
     float v = Input.GetAxis(verticalCtrl);
+
+    h = Mathf.Abs(h) > InputThreshold ? h / Mathf.Abs(h) : 0;
+    v = Mathf.Abs(v) > InputThreshold ? v / Mathf.Abs(v) : 0;
+
+    if (h > 0.5) {
+      UpdateBirdSpriteDirection(false);
+    } else if (h < -0.5) {
+      UpdateBirdSpriteDirection(true);
+    }
+
+    transform.position += h * Vector3.right * speed * Time.deltaTime;
+    transform.position += v * (Vector3.up + Vector3.forward) * speed * Time.deltaTime;
 
     if (Input.GetKeyDown(KeyCode.Space)) {
       HandleDeathFlex();
     }
 
-    if (h < -InputThreshold) {
-			facingLeft = true;
-      transform.position += Vector3.left * speed * Time.deltaTime;
-    }
-
-    if (h > InputThreshold) {
-			facingLeft = false;
-      transform.position += Vector3.right * speed * Time.deltaTime;
-    }
-
-    if (v > InputThreshold) {
-      transform.position += (Vector3.up + Vector3.forward) * speed * Time.deltaTime;
-    }
-
-    if (v < -InputThreshold) {
-      transform.position += (Vector3.down + Vector3.back) * speed * Time.deltaTime;
-    }
-
-		if (h != 0 || v != 0) {
-			animator.SetBool("birdWalk", true);
-		} else {
+		if (h == 0 && v == 0) {
 			animator.SetBool("birdWalk", false);
+		} else {
+			animator.SetBool("birdWalk", true);
 		}
   }
 
