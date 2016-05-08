@@ -83,6 +83,7 @@ public class BirdController : MonoBehaviour {
 
     if (movemetLockTimer < DateTime.Now) {
 			animator.SetBool("birdFlex", false);
+			animator.SetBool("birdPeck", false);
       this.birdState = State.NORMAL;
     }
 
@@ -220,11 +221,13 @@ public class BirdController : MonoBehaviour {
   private void HandlePeck() {
     this.movemetLockTimer = DateTime.Now.AddSeconds(PeckLockTimerSeconds);
     this.birdState = State.PECKING;
+		animator.SetBool("birdPeck", true);
   }
 
   private void HandleNormalFlex() {
     this.movemetLockTimer = DateTime.Now.AddSeconds(FlexLockTimerSeconds);
     this.birdState = State.FLEXING;
+		animator.SetBool("birdFlex", true);
   }
 
   private void HandleDeathFlex() {

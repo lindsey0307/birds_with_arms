@@ -1,0 +1,579 @@
+fileFormatVersion: 2
+guid: b9692586c204743c4a05c8160674ce4d
+timeCreated: 1462739434
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BAF_sprites-2_0
+    21300002: BAF_sprites-2_1
+    21300004: BAF_sprites-2_2
+    21300006: BAF_sprites-2_3
+    21300008: BAF_sprites-2_4
+    21300010: BAF_sprites-2_5
+    21300012: BAF_sprites-2_6
+    21300014: BAF_sprites-2_7
+    21300016: BAF_sprites-2_8
+    21300018: BAF_sprites-2_9
+    21300020: BAF_sprites-2_10
+    21300022: BAF_sprites-2_11
+    21300024: BAF_sprites-2_12
+    21300026: BAF_sprites-2_13
+    21300028: BAF_sprites-2_14
+    21300030: BAF_sprites-2_15
+    21300032: BAF_sprites-2_16
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 420
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BAF_sprites-2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3296
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122, y: -68}
+        - {x: 122, y: -11}
+        - {x: 108, y: 33}
+        - {x: 69, y: 46}
+        - {x: 72, y: 133}
+        - {x: -48, y: 133}
+        - {x: -70, y: 119}
+        - {x: -115, y: -7}
+        - {x: -115, y: -93}
+        - {x: -33, y: -117}
+        - {x: -35, y: -177}
+        - {x: 10, y: -177}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+        - {x: 58, y: -157}
+        - {x: 44, y: -147}
+    - name: BAF_sprites-2_1
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3296
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58, y: -157}
+        - {x: 123, y: -85}
+        - {x: 123, y: -6}
+        - {x: 67, y: 131}
+        - {x: 62, y: 133}
+        - {x: -23, y: 133}
+        - {x: -61, y: 120}
+        - {x: -114, y: 7}
+        - {x: -114, y: -72}
+        - {x: -108, y: -89}
+        - {x: -90, y: -96}
+        - {x: -30, y: -176}
+        - {x: -27, y: -177}
+        - {x: 2, y: -177}
+        - {x: 16, y: -176}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+    - name: BAF_sprites-2_2
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3296
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 44, y: -147}
+        - {x: 96, y: -91}
+        - {x: 124, y: -40}
+        - {x: 124, y: -26}
+        - {x: 121, y: -19}
+        - {x: 85, y: 37}
+        - {x: 72, y: 126}
+        - {x: 44, y: 133}
+        - {x: -12, y: 133}
+        - {x: -41, y: 129}
+        - {x: -49, y: 91}
+        - {x: -113, y: 3}
+        - {x: -113, y: -106}
+        - {x: -29, y: -177}
+        - {x: 24, y: -177}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+        - {x: 58, y: -157}
+    - name: BAF_sprites-2_3
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3296
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58, y: -157}
+        - {x: 44, y: -147}
+        - {x: 102, y: -92}
+        - {x: 125, y: -70}
+        - {x: 125, y: 31}
+        - {x: 87, y: 132}
+        - {x: -50, y: 132}
+        - {x: -68, y: 128}
+        - {x: -112, y: 8}
+        - {x: -112, y: -63}
+        - {x: -107, y: -91}
+        - {x: -89, y: -92}
+        - {x: -30, y: -176}
+        - {x: -27, y: -177}
+        - {x: 2, y: -177}
+        - {x: 16, y: -176}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+    - name: BAF_sprites-2_4
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3296
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58, y: -157}
+        - {x: 44, y: -147}
+        - {x: 126, y: -74}
+        - {x: 126, y: -12}
+        - {x: 109, y: 33}
+        - {x: 81, y: 127}
+        - {x: 52, y: 132}
+        - {x: -55, y: 132}
+        - {x: -111, y: -9}
+        - {x: -111, y: -91}
+        - {x: -30, y: -176}
+        - {x: -27, y: -177}
+        - {x: 2, y: -177}
+        - {x: 16, y: -176}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+    - name: BAF_sprites-2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2496
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58, y: -157}
+        - {x: 44, y: -147}
+        - {x: 102, y: -92}
+        - {x: 125, y: -70}
+        - {x: 125, y: 31}
+        - {x: 87, y: 132}
+        - {x: -50, y: 132}
+        - {x: -68, y: 128}
+        - {x: -112, y: 8}
+        - {x: -112, y: -63}
+        - {x: -107, y: -91}
+        - {x: -89, y: -92}
+        - {x: -30, y: -176}
+        - {x: -27, y: -177}
+        - {x: 2, y: -177}
+        - {x: 16, y: -176}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+    - name: BAF_sprites-2_6
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2496
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 44, y: -147}
+        - {x: 96, y: -91}
+        - {x: 124, y: -40}
+        - {x: 124, y: -26}
+        - {x: 121, y: -19}
+        - {x: 85, y: 37}
+        - {x: 72, y: 126}
+        - {x: 44, y: 133}
+        - {x: -12, y: 133}
+        - {x: -41, y: 129}
+        - {x: -49, y: 91}
+        - {x: -113, y: 3}
+        - {x: -113, y: -106}
+        - {x: -29, y: -177}
+        - {x: 24, y: -177}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+        - {x: 58, y: -157}
+    - name: BAF_sprites-2_7
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 2496
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58, y: -157}
+        - {x: 123, y: -85}
+        - {x: 123, y: -6}
+        - {x: 67, y: 131}
+        - {x: 62, y: 133}
+        - {x: -23, y: 133}
+        - {x: -61, y: 120}
+        - {x: -114, y: 7}
+        - {x: -114, y: -72}
+        - {x: -108, y: -89}
+        - {x: -90, y: -96}
+        - {x: -30, y: -176}
+        - {x: -27, y: -177}
+        - {x: 2, y: -177}
+        - {x: 16, y: -176}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+    - name: BAF_sprites-2_8
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2496
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122, y: -12}
+        - {x: 96, y: 23}
+        - {x: 73, y: 133}
+        - {x: -48, y: 133}
+        - {x: -70, y: 119}
+        - {x: -115, y: -7}
+        - {x: -115, y: -93}
+        - {x: -26, y: -112}
+        - {x: -27, y: -171}
+        - {x: -18, y: -175}
+        - {x: 19, y: -175}
+        - {x: 38, y: -137}
+        - {x: 100, y: -97}
+        - {x: 122, y: -48}
+      - - {x: 35, y: -155}
+        - {x: 37, y: -157}
+        - {x: 40, y: -156}
+        - {x: 40, y: -153}
+        - {x: 38, y: -151}
+        - {x: 35, y: -152}
+    - name: BAF_sprites-2_9
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 2496
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122, y: -47}
+        - {x: 122, y: -11}
+        - {x: 96, y: 24}
+        - {x: 73, y: 134}
+        - {x: -48, y: 134}
+        - {x: -70, y: 120}
+        - {x: -115, y: 16}
+        - {x: -115, y: -72}
+        - {x: -100, y: -105}
+        - {x: -35, y: -92}
+        - {x: -16, y: -175}
+        - {x: 19, y: -175}
+        - {x: 21, y: -172}
+        - {x: 33, y: -104}
+        - {x: 100, y: -96}
+      - - {x: 41, y: -146}
+        - {x: 41, y: -149}
+        - {x: 42, y: -151}
+        - {x: 44, y: -151}
+        - {x: 47, y: -148}
+        - {x: 46, y: -145}
+        - {x: 43, y: -145}
+    - name: BAF_sprites-2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1696
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98, y: 135}
+        - {x: -68, y: 135}
+        - {x: -115, y: 57}
+        - {x: -115, y: -87}
+        - {x: -99, y: -104}
+        - {x: -28, y: -169}
+        - {x: -6, y: -167}
+        - {x: 7, y: -155}
+        - {x: 11, y: -152}
+        - {x: 5, y: -156}
+        - {x: 2, y: -163}
+        - {x: 1, y: -174}
+        - {x: 7, y: -176}
+        - {x: 19, y: -176}
+        - {x: 35, y: -161}
+        - {x: 122, y: -91}
+        - {x: 122, y: 64}
+    - name: BAF_sprites-2_11
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1696
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 96, y: 26}
+        - {x: 73, y: 136}
+        - {x: -68, y: 136}
+        - {x: -115, y: 58}
+        - {x: -115, y: -86}
+        - {x: -99, y: -103}
+        - {x: -12, y: -108}
+        - {x: -22, y: -127}
+        - {x: -21, y: -126}
+        - {x: -34, y: -128}
+        - {x: -42, y: -149}
+        - {x: -26, y: -169}
+        - {x: 29, y: -169}
+        - {x: 52, y: -159}
+        - {x: 100, y: -94}
+        - {x: 122, y: -45}
+        - {x: 122, y: -9}
+    - name: BAF_sprites-2_12
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1696
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122, y: -46}
+        - {x: 122, y: -10}
+        - {x: 96, y: 25}
+        - {x: 73, y: 135}
+        - {x: -48, y: 135}
+        - {x: -70, y: 121}
+        - {x: -61, y: 69}
+        - {x: -115, y: -16}
+        - {x: -115, y: -91}
+        - {x: -26, y: -110}
+        - {x: -32, y: -169}
+        - {x: 50, y: -169}
+        - {x: 55, y: -162}
+        - {x: 42, y: -103}
+        - {x: 100, y: -95}
+    - name: BAF_sprites-2_13
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1696
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: -146}
+        - {x: 13, y: -138}
+        - {x: 13, y: -139}
+        - {x: 16, y: -143}
+        - {x: 26, y: -158}
+        - {x: 38, y: -160}
+        - {x: 43, y: -155}
+        - {x: 46, y: -130}
+        - {x: 42, y: -126}
+        - {x: 34, y: -127}
+        - {x: 122, y: -81}
+        - {x: 122, y: 62}
+        - {x: 98, y: 134}
+        - {x: -66, y: 134}
+        - {x: -115, y: 45}
+        - {x: -115, y: -94}
+        - {x: -23, y: -169}
+        - {x: -18, y: -170}
+        - {x: -2, y: -170}
+        - {x: 14, y: -165}
+        - {x: 17, y: -159}
+        - {x: 14, y: -147}
+    - name: BAF_sprites-2_14
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1696
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 122, y: -67}
+        - {x: 122, y: -11}
+        - {x: 108, y: 33}
+        - {x: 69, y: 46}
+        - {x: 72, y: 133}
+        - {x: -48, y: 133}
+        - {x: -70, y: 119}
+        - {x: -61, y: 67}
+        - {x: -115, y: -18}
+        - {x: -115, y: -93}
+        - {x: -44, y: -111}
+        - {x: -8, y: -170}
+        - {x: 30, y: -170}
+        - {x: 42, y: -160}
+        - {x: 60, y: -86}
+        - {x: 96, y: -92}
+    - name: BAF_sprites-2_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 179, y: -71}
+        - {x: 179, y: 111}
+        - {x: 178, y: 120}
+        - {x: 105, y: 141}
+        - {x: 80, y: 135}
+        - {x: 68, y: 126}
+        - {x: 58, y: 117}
+        - {x: 59, y: 118}
+        - {x: 61, y: 122}
+        - {x: 61, y: 125}
+        - {x: 60, y: 135}
+        - {x: -35, y: 135}
+        - {x: -49, y: 112}
+        - {x: -50, y: 94}
+        - {x: -46, y: 93}
+        - {x: -41, y: 73}
+        - {x: -73, y: 105}
+        - {x: -62, y: 170}
+        - {x: -89, y: 189}
+        - {x: -147, y: 189}
+        - {x: -147, y: -34}
+        - {x: -34, y: -177}
+        - {x: 16, y: -177}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+        - {x: 58, y: -157}
+    - name: BAF_sprites-2_16
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 896
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 44, y: -147}
+        - {x: 64, y: -97}
+        - {x: 179, y: -30}
+        - {x: 179, y: 16}
+        - {x: 149, y: 105}
+        - {x: 105, y: 148}
+        - {x: -47, y: 133}
+        - {x: -50, y: 93}
+        - {x: -67, y: 163}
+        - {x: -105, y: 185}
+        - {x: -129, y: 185}
+        - {x: -146, y: 171}
+        - {x: -146, y: 150}
+        - {x: -141, y: 141}
+        - {x: -125, y: 136}
+        - {x: -116, y: 136}
+        - {x: -138, y: 84}
+        - {x: -146, y: 40}
+        - {x: -146, y: 32}
+        - {x: -52, y: -106}
+        - {x: -33, y: -177}
+        - {x: 16, y: -177}
+        - {x: 51, y: -172}
+        - {x: 56, y: -170}
+        - {x: 58, y: -157}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

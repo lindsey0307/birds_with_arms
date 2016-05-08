@@ -1,0 +1,469 @@
+fileFormatVersion: 2
+guid: 2d22e5339dbed403fbb0502c531da144
+timeCreated: 1462737053
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: LINGUINI_sprites-5_0
+    21300002: LINGUINI_sprites-5_1
+    21300004: LINGUINI_sprites-5_2
+    21300006: LINGUINI_sprites-5_3
+    21300008: LINGUINI_sprites-5_4
+    21300010: LINGUINI_sprites-5_5
+    21300012: LINGUINI_sprites-5_6
+    21300014: LINGUINI_sprites-5_7
+    21300016: LINGUINI_sprites-5_8
+    21300018: LINGUINI_sprites-5_9
+    21300020: LINGUINI_sprites-5_10
+    21300022: LINGUINI_sprites-5_11
+    21300024: LINGUINI_sprites-5_12
+    21300026: LINGUINI_sprites-5_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 420
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: LINGUINI_sprites-5_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3396
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 173, y: 50}
+        - {x: 72, y: 102}
+        - {x: -13, y: 83}
+        - {x: -24, y: 74}
+        - {x: -107, y: 110}
+        - {x: -148, y: 110}
+        - {x: -148, y: -2}
+        - {x: -131, y: -26}
+        - {x: -88, y: -21}
+        - {x: -34, y: -152}
+        - {x: 84, y: -152}
+        - {x: 88, y: -151}
+        - {x: 85, y: -78}
+        - {x: 151, y: -104}
+        - {x: 173, y: -52}
+    - name: LINGUINI_sprites-5_1
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 3396
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 175, y: -22}
+        - {x: 175, y: 32}
+        - {x: 142, y: 76}
+        - {x: -19, y: 99}
+        - {x: -83, y: 111}
+        - {x: -146, y: 111}
+        - {x: -147, y: 109}
+        - {x: -147, y: 12}
+        - {x: -127, y: -36}
+        - {x: -72, y: -50}
+        - {x: -35, y: -142}
+        - {x: -34, y: -153}
+        - {x: 79, y: -153}
+        - {x: 88, y: -134}
+        - {x: 55, y: -98}
+        - {x: 148, y: -102}
+        - {x: 167, y: -61}
+    - name: LINGUINI_sprites-5_2
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 3396
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 175, y: 33}
+        - {x: 76, y: 97}
+        - {x: -64, y: 91}
+        - {x: -79, y: 113}
+        - {x: -145, y: 113}
+        - {x: -145, y: 76}
+        - {x: -132, y: 73}
+        - {x: -126, y: 74}
+        - {x: -145, y: 48}
+        - {x: -145, y: -15}
+        - {x: -95, y: -54}
+        - {x: -63, y: -154}
+        - {x: 85, y: -154}
+        - {x: 97, y: -132}
+        - {x: 168, y: -85}
+        - {x: 175, y: -50}
+    - name: LINGUINI_sprites-5_3
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3396
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 175, y: -22}
+        - {x: 175, y: 32}
+        - {x: 142, y: 76}
+        - {x: -19, y: 99}
+        - {x: -83, y: 111}
+        - {x: -146, y: 111}
+        - {x: -147, y: 109}
+        - {x: -147, y: 12}
+        - {x: -127, y: -36}
+        - {x: -72, y: -50}
+        - {x: -35, y: -142}
+        - {x: -34, y: -153}
+        - {x: 79, y: -153}
+        - {x: 88, y: -134}
+        - {x: 55, y: -98}
+        - {x: 148, y: -102}
+        - {x: 167, y: -61}
+    - name: LINGUINI_sprites-5_4
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 3396
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 173, y: 50}
+        - {x: 72, y: 102}
+        - {x: -13, y: 83}
+        - {x: -24, y: 74}
+        - {x: -107, y: 110}
+        - {x: -148, y: 110}
+        - {x: -148, y: -2}
+        - {x: -131, y: -26}
+        - {x: -88, y: -21}
+        - {x: -34, y: -152}
+        - {x: 84, y: -152}
+        - {x: 88, y: -151}
+        - {x: 85, y: -78}
+        - {x: 151, y: -104}
+        - {x: 173, y: -52}
+    - name: LINGUINI_sprites-5_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2696
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 134, y: 69}
+        - {x: -2, y: 102}
+        - {x: -79, y: 101}
+        - {x: -100, y: 108}
+        - {x: -149, y: 108}
+        - {x: -149, y: -16}
+        - {x: -143, y: -29}
+        - {x: -81, y: -38}
+        - {x: -33, y: -144}
+        - {x: -24, y: -151}
+        - {x: 73, y: -151}
+        - {x: 83, y: -138}
+        - {x: 82, y: -134}
+        - {x: 172, y: -83}
+        - {x: 172, y: 34}
+    - name: LINGUINI_sprites-5_6
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 2696
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 140, y: -94}
+        - {x: 162, y: -72}
+        - {x: 172, y: -53}
+        - {x: 172, y: 34}
+        - {x: 145, y: 81}
+        - {x: 41, y: 103}
+        - {x: -17, y: 109}
+        - {x: -149, y: 109}
+        - {x: -149, y: -15}
+        - {x: -143, y: -28}
+        - {x: -29, y: -87}
+        - {x: -39, y: -140}
+        - {x: -20, y: -149}
+        - {x: 31, y: -149}
+        - {x: 63, y: -144}
+        - {x: 68, y: -137}
+        - {x: 74, y: -125}
+    - name: LINGUINI_sprites-5_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 2696
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72, y: -131}
+        - {x: 76, y: -127}
+        - {x: 76, y: -119}
+        - {x: 75, y: -109}
+        - {x: 68, y: -97}
+        - {x: 96, y: -54}
+        - {x: 106, y: -79}
+        - {x: 140, y: -93}
+        - {x: 172, y: -86}
+        - {x: 172, y: 110}
+        - {x: -149, y: 110}
+        - {x: -149, y: -36}
+        - {x: -48, y: -155}
+        - {x: 9, y: -155}
+        - {x: 11, y: -140}
+        - {x: 12, y: -114}
+        - {x: 54, y: -131}
+    - name: LINGUINI_sprites-5_8
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2696
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: -130}
+        - {x: 50, y: -138}
+        - {x: 140, y: -89}
+        - {x: 162, y: -70}
+        - {x: 172, y: -51}
+        - {x: 172, y: 36}
+        - {x: 145, y: 83}
+        - {x: 41, y: 105}
+        - {x: -17, y: 111}
+        - {x: -149, y: 111}
+        - {x: -149, y: -32}
+        - {x: -46, y: -147}
+        - {x: 18, y: -147}
+        - {x: 30, y: -131}
+        - {x: 28, y: -126}
+        - {x: 25, y: -120}
+    - name: LINGUINI_sprites-5_9
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 2696
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 172, y: -52}
+        - {x: 172, y: 35}
+        - {x: 145, y: 82}
+        - {x: 41, y: 104}
+        - {x: -75, y: 66}
+        - {x: -79, y: 103}
+        - {x: -100, y: 110}
+        - {x: -149, y: 110}
+        - {x: -149, y: -14}
+        - {x: -143, y: -27}
+        - {x: -82, y: -38}
+        - {x: -1, y: -152}
+        - {x: 41, y: -152}
+        - {x: 67, y: -107}
+        - {x: 139, y: -89}
+        - {x: 162, y: -71}
+    - name: LINGUINI_sprites-5_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1996
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 172, y: -53}
+        - {x: 172, y: 34}
+        - {x: 145, y: 81}
+        - {x: 41, y: 103}
+        - {x: -75, y: 65}
+        - {x: -79, y: 102}
+        - {x: -100, y: 109}
+        - {x: -149, y: 109}
+        - {x: -149, y: -13}
+        - {x: -143, y: -28}
+        - {x: -65, y: -52}
+        - {x: -2, y: -164}
+        - {x: 43, y: -164}
+        - {x: 87, y: -92}
+        - {x: 140, y: -94}
+        - {x: 162, y: -72}
+    - name: LINGUINI_sprites-5_11
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1996
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 108}
+        - {x: -149, y: 108}
+        - {x: -149, y: -13}
+        - {x: -99, y: -63}
+        - {x: -6, y: -155}
+        - {x: 20, y: -135}
+        - {x: 20, y: -123}
+        - {x: 11, y: -107}
+        - {x: 30, y: -124}
+        - {x: 21, y: -136}
+        - {x: 15, y: -152}
+        - {x: 16, y: -158}
+        - {x: 100, y: -158}
+        - {x: 164, y: -121}
+        - {x: 172, y: -50}
+        - {x: 172, y: 34}
+        - {x: 134, y: 69}
+      - - {x: -157, y: -115}
+        - {x: -159, y: -117}
+        - {x: -159, y: -123}
+        - {x: -158, y: -126}
+        - {x: -151, y: -126}
+        - {x: -151, y: -116}
+        - {x: -154, y: -115}
+    - name: LINGUINI_sprites-5_12
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1996
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 149, y: 10}
+        - {x: 165, y: 52}
+        - {x: 165, y: 73}
+        - {x: 151, y: 104}
+        - {x: 74, y: 174}
+        - {x: 24, y: 174}
+        - {x: 14, y: 171}
+        - {x: -74, y: 124}
+        - {x: -106, y: 95}
+        - {x: -106, y: 60}
+        - {x: -102, y: 31}
+        - {x: -79, y: -31}
+        - {x: -40, y: -86}
+        - {x: -35, y: -152}
+        - {x: -2, y: -152}
+        - {x: 32, y: -109}
+        - {x: 55, y: -152}
+        - {x: 81, y: -152}
+        - {x: 86, y: -150}
+        - {x: 87, y: -133}
+        - {x: 64, y: -81}
+        - {x: 97, y: -56}
+    - name: LINGUINI_sprites-5_13
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1996
+        width: 700
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 163, y: 17}
+        - {x: 168, y: 39}
+        - {x: 168, y: 72}
+        - {x: 148, y: 113}
+        - {x: 80, y: 166}
+        - {x: 57, y: 173}
+        - {x: 26, y: 173}
+        - {x: -82, y: 116}
+        - {x: -106, y: 93}
+        - {x: -106, y: 35}
+        - {x: -64, y: -53}
+        - {x: -24, y: -103}
+        - {x: -35, y: -152}
+        - {x: -2, y: -152}
+        - {x: 32, y: -109}
+        - {x: 55, y: -152}
+        - {x: 81, y: -152}
+        - {x: 86, y: -150}
+        - {x: 87, y: -133}
+        - {x: 66, y: -84}
+        - {x: 102, y: -45}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
