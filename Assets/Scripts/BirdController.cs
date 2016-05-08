@@ -9,9 +9,9 @@ public class BirdController : MonoBehaviour {
   private const double ProbabilityBirdPecks = 0.4;
   private const float InputThreshold = 0.01f;
 
-  private const float FlexLockTimerSeconds = 3.0f;
-  private const float PeckLockTimerSeconds = 3.0f;
-  private const float DeathTimerSeconds = 3.0f;
+  private const float FlexLockTimerSeconds = 2.0f;
+  private const float PeckLockTimerSeconds = 2.0f;
+  private const float DeathTimerSeconds = 5.0f;
 
   [SerializeField] private float speed;
   [SerializeField] private Animator animator;
