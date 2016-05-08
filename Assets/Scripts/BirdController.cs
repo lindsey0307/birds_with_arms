@@ -5,6 +5,8 @@ using System;
 
 public class BirdController : MonoBehaviour {
   private const double ProbabilityBirdStandsIdle = 0.4;
+  private const double ProbabilityBirdFlexes = 0.1;
+  private const double ProbabilityBirdPecks = 0.4;
   private const float InputThreshold = 0.01f;
 
   [SerializeField] private float speed;
@@ -19,6 +21,9 @@ public class BirdController : MonoBehaviour {
   private bool isAi;
   private GameController gameController;
 
+  private enum State { NORMAL, FLEXING, DEATH_FLEXING, PECKING }
+  private State birdState;
+
   // stoopid ai birb movement tingz
   private int xMove = 0;
   private int yMove = 0;
@@ -32,6 +37,7 @@ public class BirdController : MonoBehaviour {
     this.levelBounds = levelBounds;
     this.random = random;
     this.isAi = ai;
+    this.birdState = State.NORMAL;
 
     InitBirdAnim();
 
@@ -134,10 +140,10 @@ public class BirdController : MonoBehaviour {
 
   private void UpdateBirdSpriteDirection(bool facingLeft) {
     if (facingLeft && !wasPreviouslyFacingLeft) {
-			transform.localScale = new Vector3(1, transform.localScale.y, 1);
+      transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
       wasPreviouslyFacingLeft = true;
     } else if (!facingLeft && wasPreviouslyFacingLeft) {
-			transform.localScale = new Vector3(-1, transform.localScale.y, 1);
+      transform.localScale = new Vector3(-1*Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
       wasPreviouslyFacingLeft = false;
     }
   }
