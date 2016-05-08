@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class GameController : MonoBehaviour {
   [SerializeField] private GameObject birdPrefab;
   [SerializeField] private Camera camera;
+  [SerializeField] private int playerCount;
 
   public List<BirdController> Birds { get; private set; }
 
@@ -14,20 +15,15 @@ public class GameController : MonoBehaviour {
     float vertExtent = camera.orthographicSize;
     float horzExtent = camera.orthographicSize * Screen.width / Screen.height;
 
-    float minX = -horzExtent;
-    float maxX = horzExtent;
-    float minY = -vertExtent;
-    float maxY = vertExtent;
-
-    var bounds = new Rect(minX, minY, maxX - minX, maxY - minY);
+    var bounds = new Rect(-horzExtent, -vertExtent, 2*horzExtent, 2*vertExtent);
 
     Birds = new List<BirdController>();
 
-    for (int i = 1; i < 70; i++) {
+    for (int i = 1; i < 50; i++) {
       var bird = GameObject.Instantiate(birdPrefab);
       bird.transform.SetParent(this.transform);
       BirdController birdController = bird.GetComponent<BirdController>();
-      birdController.Init(i, random, bounds, this, i > 1);
+      birdController.Init(i, random, bounds, this, i > playerCount);
       Birds.Add(birdController);
     }
   }

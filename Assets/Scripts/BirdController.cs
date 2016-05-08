@@ -5,9 +5,10 @@ using System;
 
 public class BirdController : MonoBehaviour {
   private const double ProbabilityBirdStandsIdle = 0.4;
+  private const float InputThreshold = 0.01f;
 
   [SerializeField] private float speed;
-  [SerializeField] private BoxCollider2D colliderBox;
+  [SerializeField] private Animator animator;
 	       
   public int Id { get; private set; }
 
@@ -22,7 +23,6 @@ public class BirdController : MonoBehaviour {
   private int yMove = 0;
   private DateTime nextDirectionSwtichTime;
   private System.Random random;
-	private Animator animator;
 	private bool facingLeft;
 
   public void Init(int playerId, System.Random random, Rect levelBounds, GameController controller, bool ai) {
@@ -31,7 +31,7 @@ public class BirdController : MonoBehaviour {
     this.levelBounds = levelBounds;
     this.random = random;
     this.isAi = ai;
-		this.animator = this.GetComponent<Animator>();
+
 		if (random.NextDouble() < 0.3) {
 			animator.runtimeAnimatorController = (RuntimeAnimatorController)Resources.Load("LINGUINI_sprites-3_0", 
 		typeof(RuntimeAnimatorController));
@@ -57,14 +57,23 @@ public class BirdController : MonoBehaviour {
   }
 
 	protected void FixedUpdate() {
+    UpdatePosition();
+    RestrictMovementToLevelBounds();
+	}
+
+  private void UpdatePosition() {
     if (isAi) {
       DoAiMovement();
     } else {
       DoPlayerMovement();
     }
 
-    RestrictMovementToLevelBounds();
-	}
+    if (facingLeft) {
+      transform.localRotation = Quaternion.Euler(0, 0, 0);
+    } else {
+      transform.localRotation = Quaternion.Euler(0, 180, 0);
+    }
+  }
 
   private void RandomizeStartPosition() {
     Vector3 randomPosition = new Vector3(
@@ -100,14 +109,12 @@ public class BirdController : MonoBehaviour {
       xMove = random.Next(-1, 2);
       yMove = random.Next(-1, 2);
 
-
       if (random.NextDouble() < Math.Abs(nWeight)) {
         yMove = nWeight > 0 ? -1 : 1;
       }
 
       if (random.NextDouble() < Math.Abs(eWeight)) {
         xMove = eWeight > 0 ? -1 : 1;
-
       }
 
       if (random.NextDouble() < ProbabilityBirdStandsIdle) {
@@ -127,13 +134,6 @@ public class BirdController : MonoBehaviour {
 				facingLeft = false;
 			}
 
-
-			if (facingLeft) {
-				transform.localRotation = Quaternion.Euler(0, 0, 0);
-			} else {
-				transform.localRotation = Quaternion.Euler(0, 180, 0);
-			}
-
       nextDirectionSwtichTime = DateTime.Now.AddSeconds(random.Next(800)/100f);
     }
 
@@ -143,27 +143,26 @@ public class BirdController : MonoBehaviour {
   private void DoPlayerMovement() {
     float h = Input.GetAxis(horizontalCtrl);
     float v = Input.GetAxis(verticalCtrl);
-    float t = 0.01f;
 
     if (Input.GetKeyDown(KeyCode.Space)) {
       HandleDeathFlex();
     }
 
-    if (h < -t) {
+    if (h < -InputThreshold) {
 			facingLeft = true;
       transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
-    if (h > t) {
+    if (h > InputThreshold) {
 			facingLeft = false;
       transform.position += Vector3.right * speed * Time.deltaTime;
     }
 
-    if (v > t) {
+    if (v > InputThreshold) {
       transform.position += (Vector3.up + Vector3.forward) * speed * Time.deltaTime;
     }
 
-    if (v < -t) {
+    if (v < -InputThreshold) {
       transform.position += (Vector3.down + Vector3.back) * speed * Time.deltaTime;
     }
 
@@ -172,27 +171,12 @@ public class BirdController : MonoBehaviour {
 		} else {
 			animator.SetBool("birdWalk", false);
 		}
-
-		if (facingLeft) {
-			transform.localRotation = Quaternion.Euler(0, 0, 0);
-		} else {
-			transform.localRotation = Quaternion.Euler(0, 180, 0);
-		}
-  }
-
-  void OnCollisionEnter(Collision collision) {
-    Debug.Log("TEST");
-    foreach (ContactPoint contact in collision.contacts) {
-      Debug.DrawRay(contact.point, contact.normal, Color.white);
-    }
   }
 
   private void HandleDeathFlex() {
-    Debug.Log("FLEX!");
     List<BirdController> birds = gameController.Birds;
     foreach (var bird in birds) {
       if (bird.Id != this.Id && InRange(bird.transform)) {
-//        Debug.Log("BIRD HIT!");
         bird.KillWithFlex();
       }
     }

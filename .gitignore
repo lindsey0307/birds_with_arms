@@ -1,6 +1,7 @@
 Library/
 Temp/
 Obj/
+obj/
 Build/
 Builds/
 Assets/AssetStoreTools*
