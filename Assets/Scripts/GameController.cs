@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
   [SerializeField] private GameObject birdPrefab;
+	[SerializeField] private GameObject blueLightPrefab;
+	[SerializeField] private GameObject pinkLightPrefab;
   [SerializeField] private Camera camera;
   [SerializeField] private int playerCount;
 
@@ -14,7 +16,8 @@ public class GameController : MonoBehaviour {
   void Start() {
     float vertExtent = camera.orthographicSize;
     float horzExtent = camera.orthographicSize * Screen.width / Screen.height;
-
+		GameObject.Instantiate(blueLightPrefab);
+		GameObject.Instantiate(pinkLightPrefab);
     var bounds = new Rect(-horzExtent, -vertExtent, 2*horzExtent, 2*vertExtent);
 
     Birds = new List<BirdController>();
