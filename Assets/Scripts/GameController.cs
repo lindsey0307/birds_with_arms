@@ -14,11 +14,16 @@ public class GameController : MonoBehaviour {
   private System.Random random = new System.Random();
 
   void Start() {
+    GameObject.Instantiate(blueLightPrefab);
+    GameObject.Instantiate(pinkLightPrefab);
+
     float vertExtent = camera.orthographicSize;
     float horzExtent = camera.orthographicSize * Screen.width / Screen.height;
-		GameObject.Instantiate(blueLightPrefab);
-		GameObject.Instantiate(pinkLightPrefab);
-    var bounds = new Rect(-horzExtent, -vertExtent, 2*horzExtent, 2*vertExtent);
+    float vertShift = vertExtent * 0.1f;
+    vertExtent *= 0.75f;
+    horzExtent *= 0.9f;
+
+    var bounds = new Rect(-horzExtent, -vertExtent - vertShift, 2*horzExtent, 2*vertExtent);
 
     Birds = new List<BirdController>();
 
