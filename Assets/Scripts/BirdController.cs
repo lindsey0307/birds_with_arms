@@ -57,7 +57,8 @@ public class BirdController : MonoBehaviour {
   }
 
   public void KillWithFlex() {
-    this.gameObject.SetActive(false);
+		animator.SetBool("birdDeath", true);
+//    this.gameObject.SetActive(false);
   }
 
 	protected void FixedUpdate() {
