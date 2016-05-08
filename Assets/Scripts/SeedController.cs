@@ -19,7 +19,6 @@ public class SeedController : MonoBehaviour {
 
 	void Update () {
     if (random != null && nextSpawnTime < DateTime.Now) {
-      Debug.Log(nextSpawnTime + " / " + random);
       this.nextSpawnTime = DateTime.Now.AddSeconds((float)random.NextDouble() * maxSpawnDelaySeconds);
       var seed = GameObject.Instantiate(seedPrefab);
       float x = (float)(random.NextDouble()) * this.levelBounds.width + this.levelBounds.xMin;
