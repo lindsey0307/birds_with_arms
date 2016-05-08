@@ -16,6 +16,6 @@ public class Shake : MonoBehaviour {
     this.transform.position = initPos + new Vector3(
       ((float)random.NextDouble()-.5f) * intensity, 
       ((float)random.NextDouble()-.5f) * intensity,
-      ((float)random.NextDouble()-.5f) * intensity);
+      0);
 	}
 }
