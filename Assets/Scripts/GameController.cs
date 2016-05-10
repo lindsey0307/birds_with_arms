@@ -6,6 +6,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
+
+	public static GameController instance = null;
+
   [SerializeField] private SeedController seedController;
   [SerializeField] private GameObject birdPrefab;
 	[SerializeField] private GameObject blueLightPrefab;

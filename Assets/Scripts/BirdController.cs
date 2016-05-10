@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using System;
 
 public class BirdController : MonoBehaviour {
+	public AudioClip grunt1;
+	public AudioClip grunt2;
+	public AudioClip grunt3;
+	public AudioClip grunt4;
+	public AudioClip grunt5;
+
   private const double ProbabilityBirdStandsIdle = 0.4;
   private const double ProbabilityBirdFlexes = 0.1;
   private const double ProbabilityBirdPecks = 0.4;
@@ -42,7 +48,8 @@ public class BirdController : MonoBehaviour {
   private bool wasPreviouslyFacingLeft;
 
   public void Init(int playerId, System.Random random, Rect levelBounds, GameController controller, bool ai) {
-    this.Id = playerId;
+
+		this.Id = playerId;
     this.gameController = controller;
     this.levelBounds = levelBounds;
     this.random = random;
@@ -259,12 +266,14 @@ public class BirdController : MonoBehaviour {
     this.movemetLockTimer = DateTime.Now.AddSeconds(FlexLockTimerSeconds);
     this.birdState = State.FLEXING;
 		animator.SetBool("birdFlex", true);
+		SoundManager.instance.RandomizeSfx(grunt1, grunt2, grunt3, grunt4, grunt5);
   }
 
   private void HandleDeathFlex() {
     this.movemetLockTimer = DateTime.Now.AddSeconds(FlexLockTimerSeconds);
     this.birdState = State.DEATH_FLEXING;
 		animator.SetBool("birdFlex", true);
+		SoundManager.instance.RandomizeSfx(grunt1, grunt2, grunt3, grunt4, grunt5);
 
     List<BirdController> birds = gameController.Birds;
     foreach (var bird in birds) {

@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21202476}
   - 114: {fileID: 11459606}
   - 95: {fileID: 9568074}
+  - 82: {fileID: 8291406}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -30,6 +31,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!82 &8291406
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186936}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 15000adf3ad734f248313d9de7e56e37, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &9568074
 Animator:
   serializedVersion: 3
@@ -58,6 +133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b6d73acf13946f2a7632ce02aa3fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grunt1: {fileID: 8300000, guid: 89165beb6af2a44b1918907eda69a49d, type: 3}
+  grunt2: {fileID: 8300000, guid: c48506c57af8a4c8d929d229f51dcac4, type: 3}
+  grunt3: {fileID: 8300000, guid: a1a43e782bc66455c9fdfaafd650f8d5, type: 3}
+  grunt4: {fileID: 8300000, guid: 15000adf3ad734f248313d9de7e56e37, type: 3}
+  grunt5: {fileID: 8300000, guid: 168267ca25acf46a6b2089f64f8d52cb, type: 3}
   speed: 1
   animator: {fileID: 9568074}
   birdAnimationResources:
@@ -65,6 +145,8 @@ MonoBehaviour:
   - danksey_sprite-1_0
   - LINGUINI_sprites-3_0
   - GULL-sprites_0
+  isAi: 0
+  birdState: 0
 --- !u!212 &21202476
 SpriteRenderer:
   m_ObjectHideFlags: 1
